@@ -16,35 +16,74 @@ html{
     font-size: 65.5%;
 }
 :root{
-    --cor-principal: #a68837;
-    --cor-principal-secundaria: #0a0a0a;
-    --cor-branca: #ffffff;
+    --cor-principal: #0a0a0a;
+    --cor-letra: #ffffff;
+    --cor-escura: #330202;
 }
 /*Inicio do topo superior************************************************/
-.supertopo{
+.supertopo .super-topo-box{
     width: 100%;
     background: var(--cor-principal);
 }
-.super-topo .super-topo-box .super-topo-box-corpo{
+.supertopo .super-topo-box .super-topo-box-corpo{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--cor-principal-secundaria);
+    color: var(--cor-letra);
     padding: 1rem 0;
-    background: var(--cor-principal-secundaria);
+    background: var(--cor-escura);
     clip-path: polygon(8% 0%, 92% 0%, 96% 100%, 5% 100%);
 }
-.super-topo .super-topo-box .super-topo-box-corpo .col-1 {
+.supertopo .super-topo-box .super-topo-box-corpo .col-1{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-letra);
+    margin-left: 13rem;
+}
+.supertopo .super-topo-box .super-topo-box-corpo .col-1 span{
+    font-size: 1.1rem;
+}
+.supertopo .super-topo-box .super-topo-box-corpo .col-1 span i{
+    color: var(--cor-letra);
+    padding-right: 0.5rem;
+    font-size: 1.1rem;
+}
+.supertopo .super-topo-box .super-topo-box-corpo .col-2{
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: center;
     color: var(--cor-branca);
-    margin-left: 13rem;
+    margin-right: 13rem;
+} 
+.supertopo .super-topo-box .super-topo-box-corpo .col-2 a,
+.supertopo .super-topo-box .super-topo-box-corpo .col-2 span,
+.supertopo .super-topo-box .super-topo-box-corpo .col-2 .social i{
+    color: var(--cor-branca);
+    font-size: 1.1rem;
+    transition: 0.4s;
 }
-
-
-
+.supertopo .super-topo-box .super-topo-box-corpo .col-2 .social{
+    display: flex;
+    gap: 0.9rem;
+}
+/*Incio celular***************************************************/
+@media(max-width:1150px){
+    .supertopo .super-topo-box .super-topo-box-corpo .col-1 {
+        margin-left: 8rem;
+    }
+    .supertopo .super-topo-box .super-topo-box-corpo .col-2 {
+        margin-left: 8rem;
+    }
+}
+@media(max-width:768px){
+    .supertopo{
+        display: none;
+    }
+}
+/*Final celular***************************************************/
 /*Fim do topo superior************************************************/
 
 
