@@ -86,6 +86,354 @@ html{
 /*Final celular***************************************************/
 /*Fim do topo superior************************************************/
 
+/*Inicio cabeçalho do site e nav***************************************************/
+.topo-menu-site{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    left: 0;
+    top: 0;
+    padding: 0.5rem 9.5%;
+    background: var(--cor-branca);
+    box-shadow: 0 0 5px rgb(190, 190, 190, 0.5), 0 0 10px rgb(190, 190, 190, 0.5);
+    z-index: 111;
+    transition: 0.4s ease;
+}
+.topo-menu-site .sticky{
+    padding: 0 9.5%;
+}
+.topo-menu-site .logo img{
+    width: 200px;
+}
+.topo-menu-site nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+nav .menusite ul li{
+    padding:  2.5rem 0.5rem;
+}
+nav .menusite .menulinks{
+    display: flex;
+    padding: relative;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+nav .menusite .menulinks li a{
+    position: relative;
+    color: var(--cor-escura);
+    font-size: 1.4rem ;
+    font-weight: 600;
+}
+nav .menuanuciar{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+nav .menuanuciar i {
+    font-size: 1.9rem;
+    color: var(--cor-escura);
+    cursor: pointer;
+}
+nav .menuanuciar .addbtn{
+    position: relative;
+    background: var(--cor-letra);
+    font-size: 1.6rem;
+    padding: 1.2rem 1.5rem;
+    color: var(--cor-branca);
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.7s;
+}
+nav .menuanuciar .addbtn:hover{
+    background: var(--cor-escura);
+    color: var(--cor-branca);
+}
+nav .menuanuciar .addbtn i,
+nav .menuanuciar .addbtn i:hover{
+    color: var(--cor-branca);
+    padding-right: 0.5rem;
+}
+#menubtn{
+    font-size: 3.5rem;
+}
+nav .menuanuciar i:hover{
+    color: var(--cor-principal);
+}
+nav .menusite ul li a:hover,
+nav .menusite ul li a:active{
+    color: var(--cor-principal);
+}
+/*Inicio Submenu*/
+nav .menusite ul li .menusub{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    position: absolute;
+    top: 7rem;
+    text-align: justify;
+    width: 180px;
+    background-color: var(--cor-letra);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(190, 190, 190, 0.5);
+    padding: 1rem 0 0 ;
+    display: none;
+}
+nav .menusite ul li {
+    transition: 0.4s ease;
+}
+nav .menusite ul li:hover .menusub{
+    display: flex;
+}
+nav .menusite ul li .menusub li{
+    border-bottom: 1px solid rgb(190, 190, 190, 0.5);
+    padding: 0.5rem 0 1rem 1rem;
+    z-index: 100;
+    overflow: hidden;
+}
+nav .menusite ul li .menusub li a{
+    font-size: 1.2rem;
+    transition: 0.4s ease;
+}
+nav .menusite ul li .menusub li a:hover{
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+}
+/*Final Submenu*/
+/*Inicio menu 2*/
+.menusub li .menusub-dois{
+    position: absolute;
+    left: 182px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    margin-top:-3rem ;
+    align-items: left;
+    text-align: justify;
+    padding: 1rem 0  0 ;
+    background-color: var(--cor-branca);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(190, 190, 190, 0.5);
+    z-index: 111;
+    overflow: hidden;
+    display: none;
+}
+.menusub li:hover .menusub-dois{
+    display: flex;
+}
 
+.menusub li .setalado{
+    position: absolute;
+    left: 150px;
+    top: 5px;
+    color: var(--cor-escura);
+}
+.menusub li:hover .setalado{
+    color: var(--cor-principal);
+}
+/*Final Submenu 2*/
+/*Inicio Celuar*/
+@media(max-width:1370px){
+    nav .menusite ul li{
+        gap: 1rem;
+    }
+    nav .menusite ul li .menulinks{
+        gap: 0.5rem;
+    }
+}
+@media(max-width:1190px){
+    nav .menusite ul li{
+        padding: 2.1rem 0;
+    }
+    nav ,.menuanuciar .addbtn{
+        display: none;
+    }  
+}
+@media(max-width:991px){
+    nav .menusite .menulinks{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: block;
+        background: var(--cor-branca);
+        box-shadow: 0 0 5px rgb(190, 190, 190, 0.5), 0 0 10px rgb(190, 190, 190, 0.5) ;
+        padding-left: 30px;
+        transition: 0.5s ease-in-out; 
+        display: none;
+    }
+    nav .menusite .menulinks.active{
+        display: block;
+    }
+    .topo-menu-site.sticky{
+        padding: 0.6rem 9.5%;
+    }
+    nav .menusite ul li{
+        padding: 1rem 0;
+    }
+    nav .menusite ul li .menusub{
+        position: sticky;
+        display: none;
+    }
+    .menusub li .menusub-dois{
+        position: sticky;
+        margin-top: 0rem;
+    }
+    nav .menuanuciar i.cart{
+        display: none;
+    }
+}
+@media(max-width:420px){
+    .topo-menu-site.logo img{
+        width: 120px;
+    }
+    nav .menusite .menulinks{
+        top: 4.6rem;
+    }
+}
+/*Fim Celuar*/
+/*Final cabeçalho do site e nav***************************************************/
+
+/*inicio do slide****************************************************/
+.slide-destaque .slide{
+   display: flex; 
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 110vh;
+   padding: 0 15rem;
+}
+.slide-destaque .slide .col-1{
+    flex: 1 1 20rem;
+}
+.slide-destaque .slide .col-1 h4{
+    font-size: 2.5rem;
+    color: var(--cor-principal);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 3rem;
+}
+.slide-destaque .slide .col-1 h1{
+    font-size: 3.2rem;
+    color: var(--cor-branca);
+    text-transform: capitalize;
+    letter-spacing: 3px;
+}
+.slide-destaque .slide .col-1 span{
+    color: var(--cor-principal);
+}
+.slide-destaque .slide .col-1 p{
+    font-size: 1.4rem;
+    color: var(--cor-branca);
+    letter-spacing: 2px;
+    padding-top: 4rem;
+}
+.slide-destaque .slide .col-1 .button{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 4rem;
+    gap: 1rem;
+}
+.slide-destaque .slide .col-1 .button a{
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    position: relative;
+    padding: 1.8rem 2.8rem 1.8rem 2rem;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.slide-destaque .slide .col-1 .button a i{
+    font-size: 2.5rem;
+    position: absolute;
+    top: 33%;
+    right: -1rem;
+    transform: translate(-40%);
+
+}
+.slide-destaque .slide .col-1 .button a.lojasbtn{
+    background: var(--cor-principal);
+    color: var(--cor-branca);
+}
+.slide-destaque .slide .col-1 .button a.sobrebtn{
+    background: var(--cor-branca);
+    color: var(--cor-principal);
+}
+.slide-destaque .slide .col-1 .button a.lojasbtn:hover,
+.slide-destaque .slide .col-1 .button a.sobrebtn:hover{
+    background: var(--cor-escura);
+    color: var(--cor-branca);
+}
+.slide-destaque .slide .col-2{
+    flex: 1 1 40rem;
+    padding-top: 3rem;
+}
+.slide-destaque .slide .col-2 img{
+    width: 80%;
+    height: auto;
+}
+
+.slide-destaque .swiper[class^="swiper-button-"]{
+    color: var(--cor-branca);
+    background: rgba(171,13,211, 0.5);
+    padding: 2.5rem;
+}
+.slide-destaque .swiper [class^="swiper-button-"]:hover{
+    background: var(--cor-principal);  
+}
+.slide-destaque .swiper [class^="swiper-button-"]::before{
+   font-size: 2rem;
+}
+/*Inicio celular slide*/
+@media(max-width: 1150px){
+    .slide-destaque .slide{
+        display: block;
+        height: auto;
+        padding: 5rem 10rem;
+    }
+    .slide-destaque .slide .col-2 img{
+        width: 90%;
+        height: 35rem;
+    }
+}
+@media(max-width: 600px){
+    .slide-destaque .slide{
+        padding: 5rem 7rem;
+    }
+    .slide-destaque .slide .col-1 h4{
+        font-size: 2rem;
+    }
+    .slide-destaque .slide .col-1 h1{
+        font-size: 3.2rem;
+    }
+    .slide-destaque .slide .col-1 .button a{
+        padding: 1.5rem 2.8rem 1.5rem 2rem;
+        font-size: 1.3rem;
+    }
+    .slide-destaque .slide .col-1 .button a i{
+        font-size: 2rem;
+    }
+    .slide-destaque .slide .col-2 img{
+        width: 90%;
+        height: auto;
+    }
+}
+@media(max-width: 450px){
+    .slide-destaque .slide .col-1 h4{
+        font-size: 1.3rem;
+    }
+    .slide-destaque .slide .col-1 h1{
+        font-size: 2.2rem;
+    }
+}
+/*Inicio celular slide*/
+/*Fim do slide****************************************************/
 
 
